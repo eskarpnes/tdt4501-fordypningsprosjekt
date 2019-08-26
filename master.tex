@@ -1,0 +1,68 @@
+\documentclass[abstract=on]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[]{hyperref}
+\usepackage{graphicx}
+
+% Fill in the report title, group number and names here
+\newcommand{\mytitle}{Master}
+% \newcommand{\mygroupnumber}{12}
+
+
+\newcommand{\myauthor}{
+Håvard Løkensgard and Erlend Skarpnes}
+
+\title{\mytitle}
+\author{\myauthor}
+\date{\today}
+
+
+\begin{document}
+
+% The title page, edit if you want to customize it
+\input{title_page.tex}
+
+
+
+% Change the page numbering to roman
+\pagenumbering{roman}{}
+
+% Abstract
+\input{content/Abstract.tex}
+
+% Acknowledgements
+\input{content/Acknowledgements.tex}
+
+\newpage
+% Outline for the report
+\input{content/Outline.tex}
+% Table of contents
+% \tableofcontents
+% List of figures
+% \listoffigures
+% List of tables
+% \listoftables
+
+\cleardoublepage 
+
+
+% Main content - edit corresponding file under the folder content/ to start writing
+\pagenumbering{arabic}
+
+\input{content/Introduction.tex}
+
+
+
+\appendix
+\addcontentsline{toc}{chapter}{Appendix}
+\renewcommand{\chaptername}{\appendixname}
+
+%\input{appendix/Glossary.tex}
+
+
+\renewcommand{\bibname}{References} % Rename page so it's called References instead of Bibliography
+\nocite{*} % This makes all sources appear even when we didn't cite it, but unsure if this setting is preferred or not...
+\bibliographystyle{apalike}
+\bibliographystyle{unsrt} % Used so that links (for web sources) are sourced
+\bibliography{references} % Connect to the references.bib file
+
+\end{document}
